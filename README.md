@@ -8,4 +8,8 @@ Un utilisateur est désigné par son nom (name), son nom d’utilisateur (userna
 (email), les autres informations seront ignorées.  
 Une tâche est désignée par son titre (title) et l’état d’avancement (completed) qui indique si cette
 dernière est complétée ou pas.
+
+## API :
+• Liste d’utilisateur : https://jsonplaceholder.typicode.com/users/. 
+• Liste des tâches par utilisateur : https://jsonplaceholder.typicode.com/todos?userId=%d
  
