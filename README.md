@@ -1,6 +1,11 @@
 # Users Task Management
  j'ai développé une mini application iOS qui permet de gérer la liste des tâches des utilisateurs.
  
+ ## Video illustratif du resultat
+
+https://user-images.githubusercontent.com/29579196/165059969-97626868-382e-4f2c-afbb-3d33dbaf379b.mp4
+
+
  ## Fonctionnement :
 Il s’agit d’une vue qui affiche une liste d’utilisateur récupérée via une API REST, en choisissant un
 utilisateur je peux afficher ses tâches dans une autre vue.  
