@@ -1,7 +1,7 @@
 # Users Task Management
  j'ai développé une mini application iOS qui permet de gérer la liste des tâches des utilisateurs.
  
- ## Video illustratif du resultat
+ ## Video illustratif du résultat
 
 <img src="https://github.com/ouazizmed/ToDoListUsers/blob/main/UserTaskManagement.gif" width="250" height="537"/>
 
