@@ -3,7 +3,7 @@
  
  ## Video illustratif du resultat
 
-<img src="https://github.com/ouazizmed/ToDoListUsers/blob/main/UserTaskManagement.gif" width="300" height="644"/>
+<img src="https://github.com/ouazizmed/ToDoListUsers/blob/main/UserTaskManagement.gif" width="250" height="537"/>
 
 
 
