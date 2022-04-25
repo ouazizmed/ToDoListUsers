@@ -23,9 +23,9 @@ dernière est complétée ou pas.
 J'ai utilisé l'architecture MVVM avec le routage.  
 
 ## Must To Have (Obligatoire):
-• Bonne gestion de mémoire
+• Bonne gestion de mémoire  
 • Gestion du cache, je peux utiliser l’application en mode offline si j’ai déjà téléchargé les
-data depuis le WebService
+data depuis le WebService  
 • Affichage correcte sur tout type de device iPhone/iPad sans oublier l’orientation
 portrait/landscape.
  
