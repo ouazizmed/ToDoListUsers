@@ -9,7 +9,6 @@ import Foundation
 
 enum NetworkResponse: String {
     case success
-    case refuse = "Votre demande est refusé"
     case authenticationError = "You need to be authenticated first."
     case badRequest = "Bad request"
     case outdated = "The url you requested is outdated."
@@ -87,9 +86,7 @@ struct NetworkManager {
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>{
         switch response.statusCode {
         case 200...299: return .success
-        case 401...500:
-            if(response.statusCode == 422) {return .failure(NetworkResponse.refuse.rawValue)}
-            return .failure(NetworkResponse.authenticationError.rawValue)
+        case 401...500: return .failure(NetworkResponse.authenticationError.rawValue)
         case 501...599: return .failure(NetworkResponse.badRequest.rawValue)
         case 600: return .failure(NetworkResponse.outdated.rawValue)
         default: return .failure(NetworkResponse.failed.rawValue)

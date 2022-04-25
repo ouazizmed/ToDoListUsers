@@ -7,12 +7,6 @@
 
 import Foundation
 
-//enum NetworkEnvironment {
-//    case test
-//    case production
-//    case staging
-//}
-
 public enum MisterAutoApi {
     case getUser
     case getTask(id_user: Int)
