@@ -34,6 +34,8 @@ class RootViewController: UIViewController {
         }
     }
     
+    // MARK: - Local helpers
+    
     private func fetchUsers(){
         viewModel?.getUser(completion: { success, error in
             if let success = success {
