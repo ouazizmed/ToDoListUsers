@@ -12,4 +12,8 @@ dernière est complétée ou pas.
 ## API :
 • Liste d’utilisateur : https://jsonplaceholder.typicode.com/users/   
 • Liste des tâches par utilisateur : https://jsonplaceholder.typicode.com/todos?userId=%d
+
+## Architecture
+J'ai utilisé l'architecture MVVM avec le routage.  
+
  
