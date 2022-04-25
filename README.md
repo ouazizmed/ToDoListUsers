@@ -20,7 +20,9 @@ dernière est complétée ou pas.
 • Liste des tâches par utilisateur : https://jsonplaceholder.typicode.com/todos?userId=%d
 
 ## Architecture
-J'ai utilisé l'architecture MVVM avec le routage.  
+• J'ai utilisé l'architecture MVVM avec le routage.    
+• Core Data pour télécharger data depuis WebService en mode offline.  
+• URLSession dans coté Networking.
 
 ## Must To Have (Obligatoire):
 • Bonne gestion de mémoire  
