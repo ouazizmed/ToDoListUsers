@@ -4,6 +4,7 @@
  ## Video illustratif du resultat
 
 https://user-images.githubusercontent.com/29579196/165059969-97626868-382e-4f2c-afbb-3d33dbaf379b.mp4
+![](https://github.com/ouazizmed/ToDoListUsers/blob/main/UserTaskManagement.gif)
 
 
  ## Fonctionnement :
