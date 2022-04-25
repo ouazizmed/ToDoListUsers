@@ -42,8 +42,6 @@ struct NetworkManager {
                         return
                     }
                     do {
-                        let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
-                        print("data",jsonData)
                         let apiResponse = try JSONDecoder().decode([Users].self, from: responseData)
                         completion(apiResponse ,nil)
                     }catch {
@@ -71,8 +69,6 @@ struct NetworkManager {
                         return
                     }
                     do {
-                        let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
-                        print("data",jsonData)
                         let apiResponse = try JSONDecoder().decode([Tasks].self, from: responseData)
                         completion(apiResponse ,nil)
                     }catch {

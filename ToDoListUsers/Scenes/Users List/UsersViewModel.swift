@@ -6,22 +6,36 @@
 //
 
 import UIKit
+import CoreData
 
-class UsersViewModel {
+protocol UpdateTableViewDelegate: NSObjectProtocol {
+    func reloadData(sender: UsersViewModel)
+}
+
+class UsersViewModel: NSObject, NSFetchedResultsControllerDelegate {
     
     // MARK: - Properties
     
     var networkManager: NetworkManager!
-    var users: [Users]?
+    private let container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    private var fetchedResultsController: NSFetchedResultsController<UsersEntity>?
+    weak var delegate: UpdateTableViewDelegate?
+
 
     // MARK: - Public Interfaces
     
-    var rowCount: Int {
-        users?.count ?? 0
+    func numberOfRowsInSection (section: Int) -> Int {
+        return fetchedResultsController?.sections?[section].numberOfObjects ?? 0
+    }
+       
+    func object (indexPath: IndexPath) -> UsersEntity? {
+        return fetchedResultsController?.object(at: indexPath)
     }
     
-    func usersItem(index: Int) -> Users? {
-        users?[index]
+    // Changes have happened in fetchedResultsController so we need to notify the tableView
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        // Update the tableView
+        self.delegate?.reloadData(sender: self)
     }
     
     // MARK: - Routing
@@ -41,14 +55,32 @@ class UsersViewModel {
         router?.openUserTasks(id_user: id_user)
     }
     
-}
-
-extension UsersViewModel {
+    // MARK: - Local Helpers
     
-    func getUser(completion: @escaping (_ isSucces: Bool?,_ error: String?)->()){
-        networkManager.getUser(){ (users , error) in
-            self.users = users
-            completion(error?.count ?? 0 > 0 ? false : true, error)
+    // Retrieve data from Core Data
+    func retrieveDataFromCoreData() {
+        
+        if let context = self.container?.viewContext {
+            let request: NSFetchRequest<UsersEntity> = UsersEntity.fetchRequest()
+            
+            request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+                            
+            self.fetchedResultsController = NSFetchedResultsController(
+                fetchRequest: request,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil
+            )
+            
+            // Notifies the tableView when any changes have occurred to the data
+            fetchedResultsController?.delegate = self
+            
+            // Fetch data
+            do {
+                try self.fetchedResultsController?.performFetch()
+            } catch {
+                print("Failed to initialize FetchedResultsController: \(error)")
+            }
         }
     }
 }

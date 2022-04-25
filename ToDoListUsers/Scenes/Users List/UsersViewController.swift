@@ -22,12 +22,13 @@ class UsersViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+//        fetchUsers()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        fetchUsers()
+        loadData()
     }
     
     // MARK: - Init
@@ -43,23 +44,20 @@ class UsersViewController: UIViewController {
     
     private func setupTableView() {
         
-        // Register Cells
+        // Register Cell
         tableView.register(UINib(nibName: UserCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: UserCell.reuseIdentifier)
                 
         tableView.dataSource = self
         tableView.delegate = self
     }
     
-    private func fetchUsers(){
-        viewModel?.getUser(completion: { success, error in
-            if let success = success {
-                if success {
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        })
+    private func loadData() {
+        viewModel.retrieveDataFromCoreData()
+    }
+    
+    // Update the tableView if changes have been made
+    func reloadData(sender: UsersViewModel) {
+        self.tableView.reloadData()
     }
 }
 
@@ -67,14 +65,15 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.rowCount
+        return self.viewModel.numberOfRowsInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let id_user = self.viewModel.users?[indexPath.row].id
+        let id_user = self.viewModel.object(indexPath: indexPath)?.id
         if let id_user = id_user {
-            self.viewModel.openUserTasks(id_user: id_user)
+            self.viewModel.openUserTasks(id_user: Int(id_user))
         }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,12 +82,14 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
     
     private func configureUserCell( at indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.reuseIdentifier, for: indexPath) as? UserCell else { return UITableViewCell() }
-        cell.selectionStyle = .none
-        let user = viewModel?.usersItem(index: indexPath.row)
-
-        cell.configure(users: user)
+        let object = viewModel.object(indexPath: indexPath)
+        if let user = object {
+            cell.configure(users: user)
+        }
         cell.setNeedsUpdateConstraints()
         cell.updateConstraintsIfNeeded()
+        cell.selectionStyle = .none
+
         return cell
     }
 }

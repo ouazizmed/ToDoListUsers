@@ -29,7 +29,7 @@ class UserCell: UITableViewCell {
 
     }
     
-    func configure(users: Users?) {
+    func configure(users: UsersEntity?) {
         self.nameLabel.text = users?.name
         self.usernameLabel.text = users?.username
         self.emailLabel.text = users?.email

@@ -28,11 +28,20 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        fetchUsers()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.viewModel?.openUsers()
         }
-        
+    }
+    
+    private func fetchUsers(){
+        viewModel?.getUser(completion: { success, error in
+            if let success = success {
+                if success {
+            
+                }
+            }
+        })
     }
 
 }

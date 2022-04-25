@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04538F8A28164F5F0052A6D7 /* CoreDataUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04538F8928164F5F0052A6D7 /* CoreDataUsers.swift */; };
 		04D2C4CA281251D0003B9091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2C4C9281251D0003B9091 /* AppDelegate.swift */; };
 		04D2C4CC281251D0003B9091 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2C4CB281251D0003B9091 /* SceneDelegate.swift */; };
 		04D2C4CE281251D0003B9091 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2C4CD281251D0003B9091 /* ViewController.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04538F8928164F5F0052A6D7 /* CoreDataUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUsers.swift; sourceTree = "<group>"; };
 		04D2C4C6281251D0003B9091 /* ToDoListUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D2C4C9281251D0003B9091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D2C4CB281251D0003B9091 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04538F8828164EEF0052A6D7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				04538F8928164F5F0052A6D7 /* CoreDataUsers.swift */,
+				04D2C4D2281251D0003B9091 /* ToDoListUsers.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		04D2C4BD281251CF003B9091 = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +190,6 @@
 				04D2C4CD281251D0003B9091 /* ViewController.swift */,
 				04D2C4CF281251D0003B9091 /* Main.storyboard */,
 				04D2C4DA281251D5003B9091 /* Info.plist */,
-				04D2C4D2281251D0003B9091 /* ToDoListUsers.xcdatamodeld */,
 			);
 			path = ToDoListUsers;
 			sourceTree = "<group>";
@@ -241,6 +251,7 @@
 		04D2C5002812529D003B9091 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04538F8828164EEF0052A6D7 /* CoreData */,
 				04D2C51D281268F0003B9091 /* Users.swift */,
 				04D2C51F2812772B003B9091 /* Tasks.swift */,
 			);
@@ -260,7 +271,6 @@
 		04D2C50228125368003B9091 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				04D2C53B28146FEC003B9091 /* Base elemetents */,
 				04D2C53828146EA7003B9091 /* Extensions */,
 				04D2C5042812537E003B9091 /* AppDelegate */,
 			);
@@ -350,13 +360,6 @@
 				04D2C53928146EC8003B9091 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		04D2C53B28146FEC003B9091 /* Base elemetents */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Base elemetents";
 			sourceTree = "<group>";
 		};
 		04D2C54228147360003B9091 /* Users List */ = {
@@ -542,6 +545,7 @@
 				04D2C52728127DC5003B9091 /* RootViewModel.swift in Sources */,
 				04D2C518281258A1003B9091 /* NetworkManager.swift in Sources */,
 				04D2C55028147F1E003B9091 /* UserTasksViewController.swift in Sources */,
+				04538F8A28164F5F0052A6D7 /* CoreDataUsers.swift in Sources */,
 				04D2C55B281480CB003B9091 /* UserCell.swift in Sources */,
 				04D2C53328130EAA003B9091 /* PushTransition.swift in Sources */,
 				04D2C51A281258B8003B9091 /* MisterAutoService.swift in Sources */,
