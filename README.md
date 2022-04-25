@@ -3,7 +3,8 @@
  
  ## Video illustratif du resultat
 
-![](https://github.com/ouazizmed/ToDoListUsers/blob/main/UserTaskManagement.gif =250x250)
+<img src="https://github.com/ouazizmed/ToDoListUsers/blob/main/UserTaskManagement.gif" width="250" height="250"/>
+
 
 
  ## Fonctionnement :
