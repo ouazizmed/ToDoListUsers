@@ -1,33 +1,26 @@
 # Users Task Management
- j'ai développé une mini application iOS qui permet de gérer la liste des tâches des utilisateurs.
- 
- ## Video illustratif du résultat
+I developed a mini iOS application that allows managing the task list of users.
+
+## Illustrative Video of the Result
 
 <img src="https://github.com/ouazizmed/ToDoListUsers/blob/main/UserTaskManagement.gif" width="250" height="537"/>
 
 
+## Functioning:
+This is a view that displays a list of users retrieved via a REST API. By selecting a user, I can display their tasks in another view.  
+A user is identified by their name (name), username (username), and email (email). Other information will be ignored.  
+A task is identified by its title (title) and the progress state (completed) indicating whether it is completed or not.
 
- ## Fonctionnement :
-Il s’agit d’une vue qui affiche une liste d’utilisateur récupérée via une API REST, en choisissant un
-utilisateur je peux afficher ses tâches dans une autre vue.  
-Un utilisateur est désigné par son nom (name), son nom d’utilisateur (username) et son email
-(email), les autres informations seront ignorées.  
-Une tâche est désignée par son titre (title) et l’état d’avancement (completed) qui indique si cette
-dernière est complétée ou pas.
-
-## API :
-• Liste d’utilisateur : https://jsonplaceholder.typicode.com/users/   
-• Liste des tâches par utilisateur : https://jsonplaceholder.typicode.com/todos?userId=%d
+## API:
+• User list: https://jsonplaceholder.typicode.com/users/   
+• List of tasks per user: https://jsonplaceholder.typicode.com/todos?userId=%d
 
 ## Architecture
-• J'ai utilisé l'architecture MVVM avec le routage.    
-• Core Data pour télécharger data depuis WebService en mode offline.  
-• URLSession dans coté Networking.
+• I used the MVVM architecture with routing.  
+• Core Data to download data from WebService in offline mode.  
+• URLSession in Networking side.
 
-## Must To Have (Obligatoire):
-• Bonne gestion de mémoire  
-• Gestion du cache, je peux utiliser l’application en mode offline si j’ai déjà téléchargé les
-data depuis le WebService  
-• Affichage correcte sur tout type de device iPhone/iPad sans oublier l’orientation
-portrait/landscape.
- 
+## Must To Have (Mandatory):
+• Good memory management  
+• Cache management, I can use the application in offline mode if I have already downloaded the data from the WebService  
+• Correct display on all types of iPhone/iPad devices without forgetting the portrait/landscape orientation.
